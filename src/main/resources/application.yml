@@ -1,9 +1,13 @@
+server:
+  port: 8080
+  servlet:
+    contextPath: /api
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url : ${URL}
-    username: ${USER}
-    password: ${PASSWORD}
+    url : ${DB_URL}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
 
   logging:
     level:
@@ -22,3 +26,14 @@ decorator:
   datasource:
     p6spy:
       enable-logging: true
+
+
+jwt:
+  secret: ${JWT_SECRET}
+  access-exp: ${JWT_ACCESS_EXP}
+  refresh-exp: ${JWT_REFRESH_EXP}
+
+bsm:
+  client-id: ${BSM_CLIENT_ID}
+  secret-key: ${BSM_SECRET_KEY}
+  redirect-url: ${BSM_REDIRECT_URL}
